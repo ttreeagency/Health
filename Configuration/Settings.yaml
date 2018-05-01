@@ -1,0 +1,13 @@
+Ttree:
+  Health:
+    presets:
+      default:
+        checks:
+          database:
+            class: Ttree\Health\Check\DatabaseCheck
+          elasticsearch:
+            class: Ttree\Health\Check\ElasticSearchCheck
+          newsletterSender:
+            class: Ttree\Health\Check\NewsletterSenderCheck
+
+

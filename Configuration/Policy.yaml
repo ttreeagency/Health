@@ -1,0 +1,14 @@
+privilegeTargets:
+
+  Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+
+    Ttree.Health:Health:
+      matcher: 'method(Ttree\Health\Controller\MonitoringController->indexAction(preset == "default"))'
+
+roles:
+
+  Neos.Flow:Everybody:
+    privileges:
+      -
+        privilegeTarget: Ttree.Health:Health
+        permission: GRANT
