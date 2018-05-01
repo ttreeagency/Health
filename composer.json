@@ -2,6 +2,7 @@
     "name": "ttree/health",
     "description": "health checker for Flow framework and Neos CMS",
     "type": "neos-package",
+    "license": "MIT",
     "require": {
         "neos/flow": "~4.0 || ~5.0"
     },

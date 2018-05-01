@@ -1,5 +1,7 @@
 # Health Monitoring for Flow Framework or Neos CMS
 
+_Package in development, not ready for production_
+
 ## Features
 
 - [x] Create endpoints to display your application health status
