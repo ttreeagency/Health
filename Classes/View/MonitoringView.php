@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace Ttree\Health\View;
 
+use GuzzleHttp\Psr7\Response;
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Http\Response as HttpResponse;
-use Neos\Flow\Log\SystemLoggerInterface;
 use Neos\Flow\Mvc\View\AbstractView;
 use Neos\Flow\Exception as FlowException;
 use Neos\Utility\Arrays;
+use Psr\Log\LoggerInterface;
 use Ttree\Health\Result\ErrorResult;
 use Ttree\Health\Result\ResultInterface;
 use Ttree\Health\Result\SuccessResult;
@@ -27,8 +27,8 @@ class MonitoringView extends AbstractView
     ];
 
     /**
-     * @Flow\Inject
-     * @var SystemLoggerInterface
+     * @Flow\Inject(name="Neos.Flow:SystemLogger")
+     * @var LoggerInterface
      */
     protected $systemLogger;
 
@@ -46,7 +46,7 @@ class MonitoringView extends AbstractView
         }
         $results = $this->variables['results'];
 
-        /** @var HttpResponse $response */
+        /** @var Response $response */
         $response = $this->controllerContext->getResponse();
         $response->setHeader('Content-Type', 'application/json');
 
